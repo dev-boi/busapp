@@ -5,38 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>A Basic HTML5 Template</title>
-  <meta name="description" content="A simple HTML5 Template for new projects.">
-  <meta name="author" content="SitePoint">
-
-  <meta property="og:title" content="A Basic HTML5 Template">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+  <title>IM A BEAST</title>
 </head>
 
 <body>
-  <img src="bus.jpg" style="width:100%;">
+  <img id="double-tap" src="bus.jpg" style="width:100%;">
   <div style="
     position: absolute;
-    top: 18%;
-    left: 25%;
-    transform: translate(-50%, -50%);
+    top: 16%;
+    left: 6%;
     color: #032B5E;
     font-size: 25px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     ">
-    Hi, Ryan Taw!
+    Hi, <div style="display: inline" id="name" >Anonymous</div>!
   </div>
   <div id="countdown" style="
     position: absolute;
@@ -67,6 +51,20 @@
       Number(document.getElementById("countdown").innerHTML)-1;
       document.getElementById("datetime").innerHTML= new Date().toLocaleTimeString('en-GB'); 
     }, 1000);
+    document.getElementById("double-tap").addEventListener("touchstart", tapHandler);
+
+    var tapedTwice = false;
+
+    function tapHandler(event) {
+        if(!tapedTwice) {
+            tapedTwice = true;
+            setTimeout( function() { tapedTwice = false; }, 300 );
+            return false;
+        }
+        event.preventDefault();
+        document.getElementById("name").innerHTML =
+        prompt("Please enter your name");;
+    }
   </script>
 </body>
 </html>
