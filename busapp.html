@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Basic HTML5 Template</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <img src="bus.jpg" style="width:100%;">
+  <div style="
+    position: absolute;
+    top: 16%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: #032B5E;
+    font-size: 25px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    ">
+    Hi, Ryan Taw!
+  </div>
+  <div id="countdown" style="
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 50px;
+    ">
+    116
+  </div>
+  <div style="
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    ">
+    2021 Aug 12 <br><div id="datetime"/>
+  </div>
+  <script>
+    setInterval(function(){ 
+      document.getElementById("countdown").innerHTML=
+      Number(document.getElementById("countdown").innerHTML)-1;
+      document.getElementById("datetime").innerHTML= new Date().toLocaleTimeString('en-GB'); 
+    }, 1000);
+  </script>
+</body>
+</html>
